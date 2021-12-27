@@ -32,4 +32,9 @@ private val repositoryImpl: RepositoryImpl = RepositoryImpl()) : ViewModel() {
 
         }.start()
     }
+
+    fun getWeather(){
+        //Скоро всё будет
+        getWeatherFromServer()
+    }
 }

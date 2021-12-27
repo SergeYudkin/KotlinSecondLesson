@@ -17,7 +17,7 @@ class MainFragment : Fragment() {
 
 
 
-        var _binding: FragmentMainBinding? = null
+        private var _binding: FragmentMainBinding? = null
         private val binding:FragmentMainBinding
         get(){
             return _binding!!
@@ -29,7 +29,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel ::class.java)
         viewModel.getLiveDAta().observe(viewLifecycleOwner, Observer<AppState> { renderData(it) })
-        viewModel.getWeatherFromServer()
+        viewModel.getWeather()
     }
 
     private fun renderData(appState:AppState){
